@@ -1,91 +1,108 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Leaderboard</title>
-    <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Favicon -->
-    <link rel="icon" href="public/img/favicon.png" />
 
-  </head>
-  <body>
-    <div id="leaderboard-container" class="column leaderboard-container">
-      <p class="h1 mb-2">Geektoberfest'20 Leaderboard</p>
-      <center>
+<head>
+  <title>Leaderboard</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="icon" href="public/img/favicon.png" />
+  
+</head>
+
+<body>
+  <div id="leaderboard-container" class="column leaderboard-container">
+    <p class="h1 mb-2">Geektoberfest'20 Leaderboard</p>
+    <center>
       <div style="max-width:1000px;">
         <p class="h5 mb-5">
-          Note: Quality of the PRs you make has way more weightage in final evaluation than the Number of PRs you make, don't take this leaderboard as a sign of who's winning. Making the most number of PRs is not the goal of this event.
+          Note: Quality of the PRs you make has way more weightage in final evaluation than the Number of PRs you make,
+          don't take this leaderboard as a sign of who's winning. Making the most number of PRs is not the goal of this
+          event.
         </p>
       </div>
-      </center>
-      <table class="table table-borderless" id="leaderboard-table">
-        <div class="table-header">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col"><strong>RANK</strong></th>
-              <th scope="col"><strong>PICTURE</strong></th>
-              <th scope="col"><strong>USERNAME</strong></th>
+    </center>
+    <table class="table table-borderless" id="leaderboard-table">
+      <div class="table-header">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"><strong>RANK</strong></th>
+            <th scope="col"><strong>PICTURE</strong></th>
+            <th scope="col"><strong>USERNAME</strong></th>
               <th scope="col"><strong>NUMBER OF PRs</strong></th>
               <th scope="col"><strong>DETAILS</strong></th>
             </tr>
           </thead>
         </div>
-        <tbody></tbody>
-        <script src="./public/js/leaderboard.js"></script>
+        <div id="preloader"></div>
+        <tbody id="tablebody">
+          
+        </tbody>
       </table>
+      <script src="./public/js/leaderboard.js"></script>
     </div>
+    
+  <style>
+    .leaderboard-image {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+    
+    #preloader{
+      position: fixed;
+      top: 300px;
+      left: 474px;
+      /* max-width: 1000px; */
+      /* max-heiht: 300px; */
+      width: 300px;
+      height: 300px;
+      background: url("public/img/4FB4.gif") no-repeat center;
+      background-size: contain;
+      z-index: 99999;
+    }
+    #tablebody {
+      /* display:none; */
+      /* transition: #9191e2 1s ease-out; */
+    }
+    body {
+      padding: 20px;
+      text-align: center;
+      background-image: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%);
+      font-family: "Nunito", sans-serif;
+      color: blac;
+      font-size: 20px;
+    }
 
-    <style>
-      .leaderboard-image {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-      }
-      body {
-        padding: 20px;
-        text-align: center;
-        background-image: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%);
-        font-family: "Nunito", sans-serif;
-        color: black;
-        font-size: 20px;
-      }
-
-      .h1{
-        text-align: center;
-        text-transform: uppercase;
-      }
-      table{
-        max-width: 1000px;
-        max-height: 300px;
-        justify-content: center;
-        margin: 0 auto;
-        background-color: white;
-      }
-
-      a{
-        color: black;
-      }
-      a:hover{
-        color: #037bfc;
-      }
-
-      .fa-user{
-        font-size: 30px;
-      }
+    .h1 {
+      text-align: center;
+      text-transform: uppercase;
+    }
+    
+    table {
+      max-width: 1000px;
+      max-height: 300px;
+      justify-content: center;
+      margin: 0 auto;
+      background-color: white;
+    }
+    
+    a {
+      color: black;
+    }
+    
+    a:hover {
+      color: #037bfc;
+    }
+    
+    .fa-user {
+      font-size: 30px;
+    }
     </style>
-  </body>
+</body>
+
 </html>
