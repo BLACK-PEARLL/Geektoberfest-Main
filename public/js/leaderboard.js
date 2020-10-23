@@ -1,3 +1,8 @@
+const preloader = document.querySelector("#preloader");
+// const main = document.querySelector("#tablebody");
+window.addEventListener('load', function(){
+        preloader.style.display="none";
+});
 // custom Image URL goes here
 const customUrl ="./public/img/user.png";
 
